@@ -18,6 +18,7 @@ namespace AquaponicsManager.WebHost.Controllers
         [HttpGet]
         public IActionResult TestEndpoint()
         {
+            _logger.LogInformation("Requesting the retrieval of the health api");
             var x = new List<string>()
             {
                 { "Test" },
