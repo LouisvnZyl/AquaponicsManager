@@ -18,13 +18,29 @@ namespace AquaponicsManager.WebHost.Controllers
         [HttpGet]
         public IActionResult TestEndpoint()
         {
+            _logger.LogInformation("Requesting the retrieval of the health api");
+
             var x = new List<string>()
             {
                 { "Test" },
                 { "Test 2" }
             };
 
+            for (int i = 0; i < 5; i++)
+            {
+                x.Add(i.ToString());
+            }
+
             return Ok(x);
+        }
+
+        [HttpPost("{id}")]
+        public IActionResult TestPostEndpoint(int id)
+        {
+            _logger.LogInformation("Posting a value to the api ${id}", id);
+
+
+            return Ok("Post Was recieved");
         }
 
     }
