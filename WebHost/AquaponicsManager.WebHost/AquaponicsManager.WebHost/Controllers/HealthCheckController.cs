@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using AquaponicsManager.WebHost.Models.HealthCheck;
+using Microsoft.AspNetCore.Mvc;
 using System.Web.Http.Cors;
 
 namespace AquaponicsManager.WebHost.Controllers
@@ -16,7 +17,7 @@ namespace AquaponicsManager.WebHost.Controllers
         }
 
         [HttpGet]
-        public IActionResult TestEndpoint()
+        public IActionResult GetHealthCheck()
         {
             _logger.LogInformation("Requesting the retrieval of the health api");
 
@@ -35,13 +36,69 @@ namespace AquaponicsManager.WebHost.Controllers
         }
 
         [HttpPost("{id}")]
-        public IActionResult TestPostEndpoint(int id)
+        public IActionResult PostHealthCheck(int id)
         {
             _logger.LogInformation("Posting a value to the api ${id}", id);
 
 
-            return Ok("Post Was recieved");
+            return Ok("Post was recieved");
         }
 
+        [HttpPut("{id}")]
+        public IActionResult PutHealthCheck(int id)
+        {
+            _logger.LogInformation("Putting a value to the api ${id}", id);
+
+
+            return Ok("Put was recieved");
+        }
+
+        [HttpDelete("{id}")]
+        public IActionResult DeleteHealthCheck(int id)
+        {
+            _logger.LogInformation("Deleting a value to the api ${id}", id);
+
+
+            return Ok("Delete was recieved");
+        }
+
+        [HttpPost("Body")]
+        public IActionResult PostBody([FromForm] KeyValueDto data)
+        {
+            _logger.LogInformation("Posting a value to the api {data}", data.Key);
+
+            var dogs = new List<Dog>
+            {
+                new Dog
+                {
+                    Name = "Kenny",
+                    Breed = "Chihuahua",
+                    Colour = "Caremel/White",
+                    Gender = "Male"
+                },
+                new Dog
+                {
+                    Name = "Dolly",
+                    Breed = "Chihuahua",
+                    Colour = "Black/White",
+                    Gender = "Femail"
+                },new Dog
+                {
+                    Name = "Zoey",
+                    Breed = "Jack-Russel",
+                    Colour = "Brow/White",
+                    Gender = "Female"
+                }
+            };
+
+            _logger.LogInformation("Dog Name {name}", dogs[2].GetName());
+
+            foreach (var dog in dogs)
+            {
+                _logger.LogInformation("Dog Summary: ", dog.DogSummary());
+            }
+
+            return Ok(dogs);
+        }
     }
 }
