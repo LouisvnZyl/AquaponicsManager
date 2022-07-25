@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32014.148
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AquaponicsManager.WebHost", "AquaponicsManager.WebHost\AquaponicsManager.WebHost.csproj", "{E885C7F0-64E8-4DD2-9CB8-680EFE3AEC82}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E885C7F0-64E8-4DD2-9CB8-680EFE3AEC82}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E885C7F0-64E8-4DD2-9CB8-680EFE3AEC82}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E885C7F0-64E8-4DD2-9CB8-680EFE3AEC82}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E885C7F0-64E8-4DD2-9CB8-680EFE3AEC82}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A41979BB-E1B9-4974-BA8C-777B9435B57B}
+	EndGlobalSection
+EndGlobal
